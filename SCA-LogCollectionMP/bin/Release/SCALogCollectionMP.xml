@@ -27,6 +27,11 @@
         <Version>7.5.8501.0</Version>
         <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
       </Reference>
+      <Reference Alias="IPTypes">
+        <ID>Microsoft.IntelligencePacks.Types</ID>
+        <Version>7.0.9412.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
     </References>
   </Manifest>
   <Monitoring>
