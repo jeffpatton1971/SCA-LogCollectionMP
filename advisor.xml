@@ -2,7 +2,7 @@
   <Manifest>
     <Identity>
       <ID>ITESAdvisorLogCollection</ID>
-      <Version>1.1.0.0</Version>
+      <Version>1.2.0.0</Version>
     </Identity>
     <Name>_ITES_AdvisorLogCollection</Name>
     <References>
@@ -43,6 +43,7 @@
       <ClassTypes>
         <ClassType ID="UINameSpaced3cf6b28e7fa421787e024932d5b2e64.Group" Accessibility="Public" Abstract="false" Base="MicrosoftSystemCenterInstanceGroupLibrary7585010!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
         <ClassType ID="UINameSpacec5858598f62c4d248b986c97b43cdd9e.Group" Accessibility="Public" Abstract="false" Base="MicrosoftSystemCenterInstanceGroupLibrary7585010!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+        <ClassType ID="UINameSpace100dbcb94d1447fead6ce20a74ccc7f1.Group" Accessibility="Public" Abstract="false" Base="MicrosoftSystemCenterInstanceGroupLibrary7585010!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
       </ClassTypes>
     </EntityTypes>
   </TypeDefinitions>
@@ -89,6 +90,31 @@
                 <MonitoringObjectId>fc138a87-bf66-ea74-787a-10338a0d4c27</MonitoringObjectId>
                 <MonitoringObjectId>31a8166b-56b4-a31f-638d-33655dfca53d</MonitoringObjectId>
               </IncludeList>
+            </MembershipRule>
+          </MembershipRules>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="UINameSpace100dbcb94d1447fead6ce20a74ccc7f1.Group.DiscoveryRule" Enabled="true" Target="UINameSpace100dbcb94d1447fead6ce20a74ccc7f1.Group" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryRelationship TypeID="MicrosoftSystemCenterInstanceGroupLibrary7585010!Microsoft.SystemCenter.InstanceGroupContainsEntities" />
+        </DiscoveryTypes>
+        <DataSource ID="GroupPopulationDataSource" TypeID="SystemCenter!Microsoft.SystemCenter.GroupPopulator">
+          <RuleId>$MPElement$</RuleId>
+          <GroupInstanceId>$MPElement[Name="UINameSpace100dbcb94d1447fead6ce20a74ccc7f1.Group"]$</GroupInstanceId>
+          <MembershipRules>
+            <MembershipRule>
+              <MonitoringClass>$MPElement[Name="MicrosoftWindowsLibrary7585010!Microsoft.Windows.Server.Computer"]$</MonitoringClass>
+              <RelationshipClass>$MPElement[Name="MicrosoftSystemCenterInstanceGroupLibrary7585010!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$</RelationshipClass>
+              <Expression>
+                <RegExExpression>
+                  <ValueExpression>
+                    <Property>$MPElement[Name="MicrosoftWindowsLibrary7585010!Microsoft.Windows.Computer"]/OrganizationalUnit$</Property>
+                  </ValueExpression>
+                  <Operator>MatchesWildcard</Operator>
+                  <Pattern>OU=Lync2013,DC=home,DC=ku,DC=edu</Pattern>
+                </RegExExpression>
+              </Expression>
             </MembershipRule>
           </MembershipRules>
         </DataSource>
@@ -195,6 +221,56 @@
           <WriteAction ID="HttpWA" TypeID="IPTypes!Microsoft.SystemCenter.CollectCloudGenericEvent" />
         </WriteActions>
       </Rule>
+      <Rule ID="MomUIGeneratedRule9c9865fc00254e6186a60446f50af7d7" Enabled="false" Target="MicrosoftWindowsLibrary7585010!Microsoft.Windows.Server.Computer" ConfirmDelivery="true" Remotable="true" Priority="Normal" DiscardLevel="100">
+        <Category>EventCollection</Category>
+        <DataSources>
+          <DataSource ID="DS" TypeID="MicrosoftWindowsLibrary7585010!Microsoft.Windows.EventCollector">
+            <ComputerName>$Target/Property[Type="MicrosoftWindowsLibrary7585010!Microsoft.Windows.Computer"]/NetworkName$</ComputerName>
+            <LogName>Lync Server</LogName>
+            <AllowProxying>false</AllowProxying>
+            <Expression>
+              <Or>
+                <Expression>
+                  <SimpleExpression>
+                    <ValueExpression>
+                      <XPathQuery Type="Integer">EventLevel</XPathQuery>
+                    </ValueExpression>
+                    <Operator>Equal</Operator>
+                    <ValueExpression>
+                      <Value Type="Integer">1</Value>
+                    </ValueExpression>
+                  </SimpleExpression>
+                </Expression>
+                <Expression>
+                  <SimpleExpression>
+                    <ValueExpression>
+                      <XPathQuery Type="Integer">EventLevel</XPathQuery>
+                    </ValueExpression>
+                    <Operator>Equal</Operator>
+                    <ValueExpression>
+                      <Value Type="Integer">2</Value>
+                    </ValueExpression>
+                  </SimpleExpression>
+                </Expression>
+                <Expression>
+                  <SimpleExpression>
+                    <ValueExpression>
+                      <XPathQuery Type="Integer">EventLevel</XPathQuery>
+                    </ValueExpression>
+                    <Operator>Equal</Operator>
+                    <ValueExpression>
+                      <Value Type="Integer">4</Value>
+                    </ValueExpression>
+                  </SimpleExpression>
+                </Expression>
+              </Or>
+            </Expression>
+          </DataSource>
+        </DataSources>
+        <WriteActions>
+          <WriteAction ID="HttpWA" TypeID="IPTypes!Microsoft.SystemCenter.CollectCloudGenericEvent" />
+        </WriteActions>
+      </Rule>
     </Rules>
     <Overrides>
       <RulePropertyOverride ID="OverrideForRuleMomUIGeneratedRulee99aad8983254b9482b4fcfbbdfea392ForContextUINameSpaced3cf6b28e7fa421787e024932d5b2e64Group555487450af94c00bb3a822619be99f0" Context="UINameSpaced3cf6b28e7fa421787e024932d5b2e64.Group" ContextInstance="b52997ad-3015-6dd3-1d8a-233f34ee8445" Enforced="false" Rule="MomUIGeneratedRulee99aad8983254b9482b4fcfbbdfea392" Property="Enabled">
@@ -203,12 +279,68 @@
       <RulePropertyOverride ID="OverrideForRuleMomUIGeneratedRulef35743b4758c463a95ee378422d38974ForContextUINameSpacec5858598f62c4d248b986c97b43cdd9eGroup857286f7615b480f972a15496cbb650e" Context="UINameSpacec5858598f62c4d248b986c97b43cdd9e.Group" ContextInstance="cdf539c2-618a-6fc3-ce4b-efb655ce8081" Enforced="false" Rule="MomUIGeneratedRulef35743b4758c463a95ee378422d38974" Property="Enabled">
         <Value>true</Value>
       </RulePropertyOverride>
+      <RulePropertyOverride ID="OverrideForRuleMomUIGeneratedRule9c9865fc00254e6186a60446f50af7d7ForContextUINameSpace100dbcb94d1447fead6ce20a74ccc7f1Group248d009dd7c2426ea8fbf5cac6f0457d" Context="UINameSpace100dbcb94d1447fead6ce20a74ccc7f1.Group" ContextInstance="1964ae91-e37d-30fa-70d1-5b9ef964586d" Enforced="false" Rule="MomUIGeneratedRule9c9865fc00254e6186a60446f50af7d7" Property="Enabled">
+        <Value>true</Value>
+      </RulePropertyOverride>
     </Overrides>
   </Monitoring>
   <Presentation>
+    <Views>
+      <View ID="View_c52eb34a41ad41a38d7e1105deb9864d" Accessibility="Public" Enabled="true" Target="SystemLibrary7585010!System.Entity" TypeID="SystemCenter!Microsoft.SystemCenter.EventViewType" Visible="true">
+        <Category>Operations</Category>
+        <Criteria>
+          <RuleList>
+            <Rule>37317f06-c5a1-5d16-cc43-c14be4e17c55</Rule>
+            <Rule>48e259e3-fcad-166c-788c-bd4530f80627</Rule>
+          </RuleList>
+        </Criteria>
+        <Presentation>
+          <ColumnInfo Index="0" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
+            <Name>Level</Name>
+            <Id>LevelId</Id>
+          </ColumnInfo>
+          <ColumnInfo Index="1" SortIndex="0" Width="100" Grouped="false" Sorted="true" IsSortable="true" Visible="true" SortOrder="Descending">
+            <Name>Date and Time</Name>
+            <Id>TimeGenerated</Id>
+          </ColumnInfo>
+          <ColumnInfo Index="2" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
+            <Name>Source</Name>
+            <Id>PublisherName</Id>
+          </ColumnInfo>
+          <ColumnInfo Index="3" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
+            <Name>Name</Name>
+            <Id>MonitoringObjectDisplayName</Id>
+          </ColumnInfo>
+          <ColumnInfo Index="4" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+            <Name>User</Name>
+            <Id>User</Id>
+          </ColumnInfo>
+          <ColumnInfo Index="5" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
+            <Name>Event Number</Name>
+            <Id>Number</Id>
+          </ColumnInfo>
+          <ColumnInfo Index="6" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+            <Name>Log Name</Name>
+            <Id>Channel</Id>
+          </ColumnInfo>
+          <ColumnInfo Index="7" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+            <Name>Logging Computer</Name>
+            <Id>LoggingComputer</Id>
+          </ColumnInfo>
+          <ColumnInfo Index="8" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+            <Name>Rule Name</Name>
+            <Id>RuleDisplayName</Id>
+          </ColumnInfo>
+        </Presentation>
+        <Target />
+      </View>
+    </Views>
     <Folders>
       <Folder ID="Folder_943a4532098c4211bf270a1a575200d1" Accessibility="Public" ParentFolder="SystemCenter!Microsoft.SystemCenter.Monitoring.ViewFolder.Root" />
     </Folders>
+    <FolderItems>
+      <FolderItem ElementID="View_c52eb34a41ad41a38d7e1105deb9864d" ID="i84c3fc8088274a9d9435c771e405ee0f" Folder="Folder_943a4532098c4211bf270a1a575200d1" />
+    </FolderItems>
   </Presentation>
   <LanguagePacks>
     <LanguagePack ID="ENU" IsDefault="false">
@@ -240,7 +372,6 @@
         </DisplayString>
         <DisplayString ElementID="UINameSpacec5858598f62c4d248b986c97b43cdd9e.Group">
           <Name>ITES_DnsServers</Name>
-          <Description />
         </DisplayString>
         <DisplayString ElementID="UINameSpacec5858598f62c4d248b986c97b43cdd9e.Group.DiscoveryRule">
           <Name>Populate ITESDnsServers</Name>
@@ -248,6 +379,20 @@
         </DisplayString>
         <DisplayString ElementID="MomUIGeneratedRulef35743b4758c463a95ee378422d38974">
           <Name>Collect DNS Server log</Name>
+        </DisplayString>
+        <DisplayString ElementID="View_c52eb34a41ad41a38d7e1105deb9864d">
+          <Name>Collected Logs</Name>
+        </DisplayString>
+        <DisplayString ElementID="MomUIGeneratedRule9c9865fc00254e6186a60446f50af7d7">
+          <Name>Collect Lync Logs</Name>
+          <Description>Send to the cloud</Description>
+        </DisplayString>
+        <DisplayString ElementID="UINameSpace100dbcb94d1447fead6ce20a74ccc7f1.Group">
+          <Name>ITES_LyncServers</Name>
+        </DisplayString>
+        <DisplayString ElementID="UINameSpace100dbcb94d1447fead6ce20a74ccc7f1.Group.DiscoveryRule">
+          <Name>Populate ITES_LyncServers</Name>
+          <Description>This discovery rule populates the group 'ITES_LyncServers'</Description>
         </DisplayString>
       </DisplayStrings>
     </LanguagePack>
