@@ -1,0 +1,106 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance97095ef485104158ad3cc9b0fdb07502" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
+      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>DNSLogCollector</Id>
+        <DisplayName>DNS Log Collection Rule</DisplayName>
+        <Description>Description for the new event collection rule.</Description>
+        <Category>EventCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Windows!Microsoft.Windows.Server.Computer</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;ComputerName&gt;$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$&lt;/ComputerName&gt;&lt;LogName&gt;DNS Server&lt;/LogName&gt;&lt;AllowProxying&gt;false&lt;/AllowProxying&gt;&lt;Expression&gt;&lt;Or&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;1&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;2&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;4&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;/Or&gt;&lt;/Expression&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.EventCollector</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </EventCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instanceb4411ff2338c4fd3a7725a1dec75e876" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
+      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>DirectoryServiceLogCollector</Id>
+        <DisplayName>Directory Service Log Collection Rule</DisplayName>
+        <Description>Description for the new event collection rule.</Description>
+        <Category>EventCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Windows!Microsoft.Windows.Server.Computer</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;ComputerName&gt;$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$&lt;/ComputerName&gt;&lt;LogName&gt;Directory Service&lt;/LogName&gt;&lt;AllowProxying&gt;false&lt;/AllowProxying&gt;&lt;Expression&gt;&lt;Or&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;1&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;2&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;4&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;/Or&gt;&lt;/Expression&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.EventCollector</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </EventCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance949a07a76b4f4acc8219dfaf4c2df572" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
+      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>LyncServerLogCollector</Id>
+        <DisplayName>Lync Server Log Collection Rule</DisplayName>
+        <Description>Description for the new event collection rule.</Description>
+        <Category>EventCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Windows!Microsoft.Windows.Computer</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;ComputerName&gt;$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$&lt;/ComputerName&gt;&lt;LogName&gt;Lync Server&lt;/LogName&gt;&lt;AllowProxying&gt;false&lt;/AllowProxying&gt;&lt;Expression&gt;&lt;Or&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;1&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;2&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;4&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;/Or&gt;&lt;/Expression&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.EventCollector</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </EventCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instancecf686bad59a34a95b8813924e8004cf9" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
+      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>ADFSAdminLogCollector</Id>
+        <DisplayName>ADFS Admin Log Collection Rule</DisplayName>
+        <Description>Description for the new event collection rule.</Description>
+        <Comment />
+        <Category>EventCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Windows!Microsoft.Windows.Server.Computer</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;ComputerName&gt;$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$&lt;/ComputerName&gt;&lt;LogName&gt;AD FS/Admin&lt;/LogName&gt;&lt;AllowProxying&gt;false&lt;/AllowProxying&gt;&lt;Expression&gt;&lt;Or&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;1&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;2&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;4&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;/Or&gt;&lt;/Expression&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.EventCollector</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </EventCollectionRuleConfig>
+    </Instance>
+    <Instance ID="Instance4b55c239489c42b7bfade72f99b5a9fa" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
+      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>FIMSyncOperationalLogCollector</Id>
+        <DisplayName>FIM Sync Operational Log Collection Rule</DisplayName>
+        <Description>Description for the new event collection rule.</Description>
+        <Comment>Forefront Identity Manager Synchronization/Operational</Comment>
+        <Category>EventCollection</Category>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Target>Windows!Microsoft.Windows.Server.Computer</Target>
+        <Enabled>false</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <DiscardLevel>100</DiscardLevel>
+        <ConditionDetectionId>CD</ConditionDetectionId>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;ComputerName&gt;$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$&lt;/ComputerName&gt;&lt;LogName&gt;Forefront Identity Manager Synchronization/Operational&lt;/LogName&gt;&lt;AllowProxying&gt;false&lt;/AllowProxying&gt;&lt;Expression&gt;&lt;Or&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;1&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;2&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;Expression&gt;&lt;SimpleExpression&gt;&lt;ValueExpression&gt;&lt;XPathQuery Type="Integer"&gt;EventLevel&lt;/XPathQuery&gt;&lt;/ValueExpression&gt;&lt;Operator&gt;Equal&lt;/Operator&gt;&lt;ValueExpression&gt;&lt;Value Type="Integer"&gt;4&lt;/Value&gt;&lt;/ValueExpression&gt;&lt;/SimpleExpression&gt;&lt;/Expression&gt;&lt;/Or&gt;&lt;/Expression&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.EventCollector</DataSourceType>
+        <CollectToDB>true</CollectToDB>
+        <CollectToDW>true</CollectToDW>
+      </EventCollectionRuleConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>
