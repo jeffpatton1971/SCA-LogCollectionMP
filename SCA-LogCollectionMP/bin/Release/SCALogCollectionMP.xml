@@ -3,7 +3,7 @@
   <Manifest>
     <Identity>
       <ID>SCALogCollectionMP</ID>
-      <Version>1.0.0.25</Version>
+      <Version>1.0.0.34</Version>
     </Identity>
     <Name>SCA-LogCollectionMP</Name>
     <References>
@@ -83,8 +83,7 @@
           </DataSource>
         </DataSources>
         <WriteActions>
-          <WriteAction ID="CollectToDB" TypeID="SC!Microsoft.SystemCenter.CollectEvent" />
-          <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishEventData" />
+          <WriteAction ID="HttpWA" TypeID="IPTypes!Microsoft.SystemCenter.CollectCloudGenericEvent" />
         </WriteActions>
       </Rule>
       <Rule ID="SCALogCollectionMP.DirectoryServiceLogCollector" Target="Windows!Microsoft.Windows.Server.Computer" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
@@ -134,8 +133,7 @@
           </DataSource>
         </DataSources>
         <WriteActions>
-          <WriteAction ID="CollectToDB" TypeID="SC!Microsoft.SystemCenter.CollectEvent" />
-          <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishEventData" />
+          <WriteAction ID="HttpWA" TypeID="IPTypes!Microsoft.SystemCenter.CollectCloudGenericEvent" />
         </WriteActions>
       </Rule>
       <Rule ID="SCALogCollectionMP.LyncServerLogCollector" Target="Windows!Microsoft.Windows.Computer" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
@@ -185,8 +183,7 @@
           </DataSource>
         </DataSources>
         <WriteActions>
-          <WriteAction ID="CollectToDB" TypeID="SC!Microsoft.SystemCenter.CollectEvent" />
-          <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishEventData" />
+          <WriteAction ID="HttpWA" TypeID="IPTypes!Microsoft.SystemCenter.CollectCloudGenericEvent" />
         </WriteActions>
       </Rule>
       <Rule ID="SCALogCollectionMP.ADFSAdminLogCollector" Target="Windows!Microsoft.Windows.Server.Computer" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
@@ -236,8 +233,7 @@
           </DataSource>
         </DataSources>
         <WriteActions>
-          <WriteAction ID="CollectToDB" TypeID="SC!Microsoft.SystemCenter.CollectEvent" />
-          <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishEventData" />
+          <WriteAction ID="HttpWA" TypeID="IPTypes!Microsoft.SystemCenter.CollectCloudGenericEvent" />
         </WriteActions>
       </Rule>
       <Rule ID="SCALogCollectionMP.FIMSyncOperationalLogCollector" Target="Windows!Microsoft.Windows.Server.Computer" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100" Comment="Forefront Identity Manager Synchronization/Operational">
@@ -287,8 +283,7 @@
           </DataSource>
         </DataSources>
         <WriteActions>
-          <WriteAction ID="CollectToDB" TypeID="SC!Microsoft.SystemCenter.CollectEvent" />
-          <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishEventData" />
+          <WriteAction ID="HttpWA" TypeID="IPTypes!Microsoft.SystemCenter.CollectCloudGenericEvent" />
         </WriteActions>
       </Rule>
     </Rules>
@@ -317,7 +312,8 @@
           <Description>Description for the new event collection rule.</Description>
         </DisplayString>
       </DisplayStrings>
-      <KnowledgeArticles></KnowledgeArticles>
+      <KnowledgeArticles>
+      </KnowledgeArticles>
     </LanguagePack>
   </LanguagePacks>
 </ManagementPack>

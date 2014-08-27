@@ -1,7 +1,7 @@
 <TemplateGroup>
   <Instances>
     <Instance ID="Instance97095ef485104158ad3cc9b0fdb07502" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
-      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <EventCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Id>DNSLogCollector</Id>
         <DisplayName>DNS Log Collection Rule</DisplayName>
         <Description>Description for the new event collection rule.</Description>
@@ -21,7 +21,7 @@
       </EventCollectionRuleConfig>
     </Instance>
     <Instance ID="Instanceb4411ff2338c4fd3a7725a1dec75e876" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
-      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <EventCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Id>DirectoryServiceLogCollector</Id>
         <DisplayName>Directory Service Log Collection Rule</DisplayName>
         <Description>Description for the new event collection rule.</Description>
@@ -41,7 +41,7 @@
       </EventCollectionRuleConfig>
     </Instance>
     <Instance ID="Instance949a07a76b4f4acc8219dfaf4c2df572" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
-      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <EventCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Id>LyncServerLogCollector</Id>
         <DisplayName>Lync Server Log Collection Rule</DisplayName>
         <Description>Description for the new event collection rule.</Description>
@@ -61,7 +61,7 @@
       </EventCollectionRuleConfig>
     </Instance>
     <Instance ID="Instancecf686bad59a34a95b8813924e8004cf9" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
-      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <EventCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Id>ADFSAdminLogCollector</Id>
         <DisplayName>ADFS Admin Log Collection Rule</DisplayName>
         <Description>Description for the new event collection rule.</Description>
@@ -82,7 +82,7 @@
       </EventCollectionRuleConfig>
     </Instance>
     <Instance ID="Instance4b55c239489c42b7bfade72f99b5a9fa" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.EventCollectionRule" Version="1.0.0.0">
-      <EventCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <EventCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Id>FIMSyncOperationalLogCollector</Id>
         <DisplayName>FIM Sync Operational Log Collection Rule</DisplayName>
         <Description>Description for the new event collection rule.</Description>
